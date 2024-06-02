@@ -5,12 +5,14 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["tsconfig.json"],
+        "project": ["**/tsconfig.json"],
+        "tsconfigRootDir": "__src",
         "createDefaultProgram": true
       },
       "extends": [
         "plugin:@angular-eslint/recommended",
-        "plugin:@angular-eslint/template/process-inline-templates"
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "@typescript-eslint/parser"
       ],
       "rules": {
         "@angular-eslint/component-class-suffix": [
@@ -33,6 +35,11 @@
             "type": "attribute",
             "prefix": "app",
             "style": "camelCase"
+          }
+        ],
+        "eslint.workingDirectories": [
+          {
+            "mode": "auto"
           }
         ]
       }
